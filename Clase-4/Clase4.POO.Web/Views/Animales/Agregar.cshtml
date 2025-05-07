@@ -1,0 +1,25 @@
+﻿@using Clase4.POO.Entidades
+@model List<IAnimal>
+@{
+	ViewData["Title"] = "Agregar Animales";
+}
+<h1>@ViewData["Title"]</h1>
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<form method="post" action="/Animales/Agregar">
+	<div class="mb-3">
+		<label for="nombre" class="form-label">Nombre</label>
+		<input type="text" class="form-control" id="nombre" name="nombre" required>
+	</div>
+	<div class="mb-3">
+		<label for="tipo" class="form-label">Tipo</label>
+		<select class="form-select" id="tipo" name="tipo">
+			<option value="Perro">Perro</option>
+			<option value="Gato">Gato</option>
+			<option value="Leon">León</option>
+			<option value="Gallina">Gallina</option>
+			<option value="Vaca">Vaca</option>
+		</select>
+	</div>
+	<button type="submit" class="btn btn-primary">Agregar Animal</button>
+</form>
+  

@@ -1,11 +1,10 @@
-using Clase4.POO.Entidades;
 using Clase4.POO.Logica;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<IEquiposLogica, EquiposLogica>();
+builder.Services.AddSingleton<IAnimalesLogica, AnimalesLogica>();
 
 var app = builder.Build();
 
@@ -26,6 +25,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Equipos}/{action=Listar}/{id?}");
+    pattern: "{controller=Animales}/{action=Listar}/{id?}");
 
 app.Run();
